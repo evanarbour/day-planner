@@ -36,10 +36,29 @@ textarea {
   border-top: 1px solid white;
 }
 
+input {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  height: 80px;
+  width: 100%;
+  white-space: pre-wrap;
+  margin-top: -2px;
+}
+
+.input-column {
+  border: 1px solid darkgray;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  padding-right: 0px;
+  padding-top: 5px;
 }
 
 .past {
@@ -59,10 +78,13 @@ textarea {
 
 .saveBtn {
   border-left: 1px solid black;
+  border-bottom: 1px solid white;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  display: flex;
+  align-items: center;
 }
 
 .saveBtn i:hover {
