@@ -7,6 +7,8 @@ $('#currentDay').text(today.format('dddd, MMMM Do, YYYY'));
 // creates a variable of the current time in HOUR
 var currentHour = parseInt(moment().format('H'));
 
+
+
 // specifies the hours of the planner: 9:00am-5:00pm (17:00)
 function displayRows() {
     for (let hour = 9; hour <= 17; hour++) {
@@ -31,7 +33,7 @@ function displayRows() {
     let $columnTimeDiv = $('<div>');
     $columnTimeDiv.addClass('col-1 hour');
 
-    // create the a <span> element to display the number value of the hour
+    // create a <span> element to display the number value of the hour
     let $timeDisplay = $('<span>')
     $timeDisplay.text(`${displayHour} ${ampm}`);
 
@@ -61,7 +63,7 @@ function displayRows() {
     plannerRow.append($rowDiv);
     $rowDiv.append($saveBtn);
 
-    
+    // color each row based on current time
     $columnEventWrapper.each(function() {
         if (currentHour > hour ) {
             $columnEventWrapper.addClass('past');
@@ -79,29 +81,3 @@ function displayRows() {
 displayRows();
 
 
-// this function changes the color of the rows depending on the time
-// function changeRowColor() {
-//     if (currentHour < 9) {
-//         $columnEventWrapper.addClass('future');
-//     } else if (currentHour > 9) {
-//         $columnEventWrapper.addClass('past');
-//     } else {
-//         $columnEventWrapper.addClass('present');
-//     }
-// };
-
-// changeRowColor();
-
-
-// if the hour is equal to the current hour, set the class to "present"
-
-    // if the hour is less than the current hour, set it to "past"
-
-    // if the hour is more than the current hour, set it to "future"
-
-// use moment.js to connect time of day to class of "past", "present" and "future" to create stylings on webpage
-// moment().toObject() ?? returns an object containing time and can set that equal to variable and then if statement?
-
-
-// how to set the value of the html boxes compared to the time of day?
-// maybe create an array 
