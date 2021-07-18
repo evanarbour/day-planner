@@ -5,7 +5,7 @@ var today = moment();
 $('#currentDay').text(today.format('dddd, MMMM Do, YYYY'));
 
 // creates a variable of the current time in HOUR
-var currentHour = moment().format('H');
+var currentHour = parseInt(moment().format('H'));
 
 // specifies the hours of the planner: 9:00am-5:00pm (17:00)
 function displayRows() {
@@ -42,6 +42,7 @@ function displayRows() {
     // create input field
     let $eventInputField = $('<input type="text">')
 
+    // create save button
     let $saveBtn = $('<div>');
     $saveBtn.addClass('saveBtn col-1');
     $saveBtn.text('Save Event');
@@ -60,20 +61,36 @@ function displayRows() {
     plannerRow.append($rowDiv);
     $rowDiv.append($saveBtn);
 
-    };
+    
+    $columnEventWrapper.each(function() {
+        if (currentHour > hour ) {
+            $columnEventWrapper.addClass('past');
+        } else if (currentHour < hour) {
+            $columnEventWrapper.addClass('future');
+        } else {
+            $columnEventWrapper.addClass('present');
+        }
+        
+    });
+    
+    }
 };
 
 displayRows();
 
 
 // this function changes the color of the rows depending on the time
-function changeRowColor($columnEventWrapper, hour) {
-    if (currentHour > hour) {
-        $columnEventWrapper.addClass('past');
-    }
-};
+// function changeRowColor() {
+//     if (currentHour < 9) {
+//         $columnEventWrapper.addClass('future');
+//     } else if (currentHour > 9) {
+//         $columnEventWrapper.addClass('past');
+//     } else {
+//         $columnEventWrapper.addClass('present');
+//     }
+// };
 
-changeRowColor();
+// changeRowColor();
 
 
 // if the hour is equal to the current hour, set the class to "present"
