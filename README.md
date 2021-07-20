@@ -16,3 +16,7 @@ Inside of the elements were important ids - such as `inputText{i}. The ids were 
 The third component of the project was changing the row color based on the current time of day which utilized another 'for loop.' Selected the specific HTML element via 'id' made creating this function very streamline.
 
 The fourth component of setting the localStorage was the trickiest part of the project because I wanted to save the user input for each individual 'time-slot' and when the page refreshed -- the same data was in the same spot. This is where the use of the 'id' came in handy again. I created a click event function for each 'Save' button and linked the data-id (in this case, it was the hour of the day), and navigated through the HTML elements from the clicked button to corresponding input from the user. I saved those two data points together in the localStorage. Then using a 'for loop,' I called them back out from localStorage in the appropriate time slot.
+
+![screenshot of application](./images/work-day-scheduler.png)
+
+Click [here](https://evanarbour.github.io/day-planner/) for the Work Day Scheduler application.
